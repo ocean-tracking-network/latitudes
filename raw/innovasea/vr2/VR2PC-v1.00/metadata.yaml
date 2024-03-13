@@ -1,0 +1,64 @@
+file:
+  name: "VR2 3145 20041115.000"
+  attribution:
+    pi:
+      name: "David H. Secor"
+      contact: "secor@umces.edu"
+    poc:
+      name: "Michael O'Brien"
+      contact: "obrien@umces.edu"
+    reference:
+      cff-version: 1.2.0
+      message: "If you use this data, please cite it as below."
+      preferred-citation:
+        type: article
+      authors:
+      - family-names: "Wingate"
+        given-names: "Rebecca"
+      - family-names: "Secor"
+        given-names: "David"
+        orcid: "https://orcid.org/0000-0001-6007-4827"
+      doi: "10.1577/T06-056.1"
+      journal: "Transactions of the American Fisheries Society"
+      month: 9
+      start: 95 # First page number
+      end: 104 # Last page number
+      title: "Intercept Telemetry of the Hudson River Striped Bass Resident Contingent: Migration and Homing Patterns"
+      issue: 1
+      volume: 136
+      year: 2007
+  format: ASCII text
+  size_bytes: 28381
+  recording:
+    start: !!timestamp "2004-09-27T12:56:01Z"
+    end: !!timestamp "2004-11-15T08:02:28Z"
+  creation_date: !!date 2004-11-15
+  exporting_software:
+    name: VR2PC
+    version: 1.00
+  instrument:
+    type: "VR2-069.0k-1.03-2-1431-C"
+    frequency_khz: 69
+    vendor: Vemco
+    firmware_version: 1.03
+    code_map:
+      custom:
+        - type: "256 Pinger"
+          sync: 401.2
+          bin: 22.3
+        - type: "4K Pinger"
+          sync: 380.0
+          bin: 20.0
+        - type: "256 Sensor"
+          sync: 360.0
+          bin: 20.0
+        - type: "256 Pinger"
+          sync: 340
+          bin: 20.0
+    serial_number: 3145
+  records:
+    transmitter:
+      "4K Pinger":
+        n_detected: 6
+        n_detections: 827
+           
