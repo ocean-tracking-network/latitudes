@@ -29,6 +29,6 @@ jobs:
         git config --global user.name 'gha update bot'
         git config --global user.email 'mhpob@users.noreply.github.com'
         git add --all
-        git commit --allow-empty -m "[auto] Build R Package"
+        git commit -m "[auto] Build R Package"
         git push
 
