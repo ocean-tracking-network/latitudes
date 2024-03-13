@@ -1,20 +1,34 @@
-# on:
-#   push:
-#     branches: [main]
-#   workflow_dispatch:
-# 
-# name: build-r-package
-# 
-# permissions:
-#   contents: write
-# 
-# jobs:
-#   build-r-package:
-#     runs-on: ubuntu-latest
-#     env:
-#       GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
-#     steps:
-# 
-#     - name: Check out repository
-#       uses: actions/checkout@v4
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+name: build-r-package
+
+permissions:
+  contents: write
+
+jobs:
+  build-r-package:
+    runs-on: ubuntu-latest
+    
+    env:
+      GITHUB_PAT: ${{ secrets.GITHUB_TOKEN }}
+    
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+      
+# There are issues here finding and copying multiple files
+    - name: Copy raw data
+      run: |
+        cp -u "$(find ~+/raw -type f | grep -v "yaml")" .R-package/inst/extdata
+        
+    - name: Commit built R package
+      run: |
+        git config --global user.name 'gha update bot'
+        git config --global user.email 'mhpob@users.noreply.github.com'
+        git add --all
+        git commit --allow-empty -m "[auto] Build R Package"
+        git push
 
