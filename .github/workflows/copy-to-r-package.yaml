@@ -22,7 +22,7 @@ jobs:
 # There are issues here finding and copying multiple files
     - name: Copy raw data
       run: |
-        cp -u "$(find ~+/raw -type f | grep -v "yaml")" .R-package/inst/extdata
+        find ~+/raw -type f ! -name '*.yaml' -exec cp -u '{}' .R-package/inst/extdata \;
         
     - name: Commit built R package
       run: |
