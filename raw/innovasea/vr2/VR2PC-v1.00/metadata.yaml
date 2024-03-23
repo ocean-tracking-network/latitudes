@@ -27,9 +27,9 @@ file:
   format: ASCII text
   size_bytes: 28381
   recording:
-    start: !!timestamp "2004-09-27T12:56:01Z"
-    end: !!timestamp "2004-11-15T08:02:28Z"
-  creation_date: !!date 2004-11-15
+    start: !!timestamp "2004-09-27 12:56:01"
+    end: !!timestamp "2004-11-15 08:02:28"
+  creation_date: 2004-11-15
   exporting_software:
     name: VR2PC
     version: 1.00
@@ -55,6 +55,6 @@ file:
     serial_number: 3145
   records:
     transmitter:
-      "4K Pinger":
+      - type: "4K Pinger"
         n_detected: 6
         n_detections: 827
