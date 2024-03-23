@@ -1,0 +1,21 @@
+name: YAMALE validation
+
+on:
+  push:
+    branches: [yamale, main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  yamale-validate:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+      
+    - name: Install Yamale
+      run: "pip install yamale"
+      
+    - name: Run Yamale
+      run: "yamale"
