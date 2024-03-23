@@ -1,0 +1,38 @@
+# https://github.com/23andMe/Yamale?tab=readme-ov-file#validators
+file:
+  name: str()
+  attribution:
+    poc:
+      name: str()
+      contact: regex('^.*@.*\\..*$')
+    reference: map()
+  format: str()
+  size_bytes: int()
+  recording:
+    start: timestamp(min='1990-01-01 00:00:00')
+    end: timestamp(min='1990-01-01 00:00:00')
+  creation_date: day(min='1990-01-01')
+  exporting_software:
+    name: str()
+    version: any(str(), num())
+  instrument:
+    type: str()
+    frequency_khz: num()
+    vendor: str()
+    firmware_version: any(str(), num())
+    code_map:
+      custom: list(include('custom_map'), required=False)
+    serial_number: num()
+  records:
+    transmitter: list(include('transmitter_record'))
+        
+---
+custom_map:
+  type: str()
+  sync: num()
+  bin: num()
+
+transmitter_record:
+  type: str()
+  n_detected: int()
+  n_detections: int()
