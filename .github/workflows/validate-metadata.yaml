@@ -18,4 +18,8 @@ jobs:
       run: "pip install yamale"
       
     - name: Run Yamale
-      run: "yamale"
+      run: |
+        find -path ./.github/workflows -prune -false -o \
+        -iname "*.yaml" \
+        ! -name "schema.yaml" \
+        -exec yamale -s schema.yaml '{}' \;
