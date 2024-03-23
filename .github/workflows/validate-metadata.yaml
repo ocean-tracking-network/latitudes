@@ -22,4 +22,4 @@ jobs:
         find -path ./.github/workflows -prune -false -o \
         -iname "*.yaml" \
         ! -name "schema.yaml" \
-        -exec yamale -s schema.yaml '{}' \;
+        -exec yamale -s schema.yaml '{}' +
