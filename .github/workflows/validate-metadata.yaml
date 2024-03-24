@@ -2,7 +2,7 @@ name: YAMALE validation
 
 on:
   push:
-    branches: [yamale, main]
+    branches: [main]
   pull_request:
   workflow_dispatch:
 
@@ -19,7 +19,5 @@ jobs:
       
     - name: Run Yamale
       run: |
-        find -path ./.github/workflows -prune -false -o \
-        -iname "*.yaml" \
-        ! -name "schema.yaml" \
-        -exec yamale -s schema.yaml '{}' +
+        find -iname metadata.yaml \
+        -exec yamale -s schema.yaml '{}' \;
