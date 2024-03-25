@@ -30,6 +30,9 @@ jobs:
     - name: Install Yamale
       run: "pip install yamale"
       
+    - name: Install ruamel
+      name: "pip install ruamel.yaml"
+      
     - name: Run Yamale
       run: |
         yamale -s schema.yaml -p ruamel ${{ matrix.metadata-file }}
