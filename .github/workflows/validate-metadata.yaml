@@ -31,7 +31,7 @@ jobs:
       run: "pip install yamale"
       
     - name: Install ruamel
-      name: "pip install ruamel.yaml"
+      run: "pip install ruamel.yaml"
       
     - name: Run Yamale
       run: |
