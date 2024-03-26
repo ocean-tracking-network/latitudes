@@ -1,0 +1,49 @@
+name: Validation
+
+on:
+  push:
+    branches: [main, yamale]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  list-metadata-files:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.file-matrix.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: file-matrix
+        run: echo "::set-output name=matrix::$(find -iname metadata.yaml | jq -Rsc 'split("\n")[:-1]')"
+      
+  yamale-validate:
+    needs: list-metadata-files
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        metadata-file: ${{ fromJSON(needs.list-metadata-files.outputs.matrix) }}
+    
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+      
+    - name: Install Yamale
+      run: "pip install yamale"
+      
+    - name: Install ruamel
+      run: "pip install ruamel.yaml"
+      
+    - name: Run Yamale
+      run: |
+        yamale -s schema.yaml -p ruamel ${{ matrix.metadata-file }}
+    
+  # cff-validate:
+  #   needs: list-metadata-files
+  #   runs-on: ubuntu-latest
+  #   strategy:
+  #     matrix:
+  #       metadata-file: ${{ fromJSON(needs.list-metadata-files.outputs.matrix) }}
+  #   
+  #   steps:
+  #   - name: Validate citation
+  #     uses: dieghernan/cff-validator@v3
