@@ -3,8 +3,7 @@ name: Validate metadata
 on:
   push:
     paths:
-      - **/metadata.yaml
-      - **/metadata.yml
+      - '**/metadata.ya?ml'
   pull_request:
   workflow_dispatch:
 
