@@ -39,7 +39,7 @@ jobs:
       
     - name: Run Yamale
       run: |
-        yamale -s schema.yaml -p ruamel ${{ matrix.metadata-file }}
+        yamale -s ./test/metadata_schema.yaml -p ruamel ${{ matrix.metadata-file }}
     
   # cff-validate:
   #   needs: list-metadata-files
