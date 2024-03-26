@@ -3,7 +3,7 @@ name: Validate metadata
 on:
   push:
     paths:
-      - '**/metadata.ya?ml'
+      - '**metadata.ya?ml'
   pull_request:
   workflow_dispatch:
 
@@ -34,8 +34,8 @@ jobs:
       
     - name: Install ruamel
       run: |
-        pip install -U pip setuptools wheel \
-        pip install ruamel.yaml
+        pip install ruamel.yaml \
+        pip install ruamel.yaml.cmd
       
     - name: Run Yamale
       run: |
