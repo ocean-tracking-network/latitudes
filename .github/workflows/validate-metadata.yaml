@@ -1,8 +1,9 @@
-name: Validation
+name: Validate metadata
 
 on:
   push:
-    branches: [main, yamale]
+    paths:
+      - '**metadata.ya?ml'
   pull_request:
   workflow_dispatch:
 
@@ -14,7 +15,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - id: file-matrix
-        run: echo "::set-output name=matrix::$(find -iname metadata.yaml | jq -Rsc 'split("\n")[:-1]')"
+        run: |
+          echo "matrix=$(find -iname metadata.yaml | jq -Rsc 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
       
   yamale-validate:
     needs: list-metadata-files
@@ -31,11 +33,13 @@ jobs:
       run: "pip install yamale"
       
     - name: Install ruamel
-      run: "pip install ruamel.yaml"
+      run: |
+        pip install ruamel.yaml \
+        pip install ruamel.yaml.cmd
       
     - name: Run Yamale
       run: |
-        yamale -s schema.yaml -p ruamel ${{ matrix.metadata-file }}
+        yamale -s ./test/metadata_schema.yaml -p ruamel ${{ matrix.metadata-file }}
     
   # cff-validate:
   #   needs: list-metadata-files

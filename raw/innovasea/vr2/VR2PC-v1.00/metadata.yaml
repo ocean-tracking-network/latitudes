@@ -5,6 +5,13 @@ poc:
   contact: "obrien@umces.edu"
 citation.cff: 
   cff-version: 1.2.0 # https://citation-file-format.github.io/
+  authors:
+  - family-names: "Wingate"
+    given-names: "Rebecca"
+  - family-names: "Secor"
+    given-names: "David"
+    orcid: "https://orcid.org/0000-0001-6007-4827"
+  title: "VR2 3145 20041115.000"
   message: "Please cite this dataset using the metadata from 'preferred-citation'."
   preferred-citation:
     type: article
@@ -26,8 +33,8 @@ citation.cff:
 format: ASCII text
 size_bytes: 28381
 recording:
-  start: 2004-09-27T12:56:01Z
-  end: 2004-11-15T08:02:28Z
+  start: "2004-09-27T12:56:01Z"
+  end: "2004-11-15T08:02:28Z"
 creation_date: 2004-11-15
 exporting_software:
   name: VR2PC
