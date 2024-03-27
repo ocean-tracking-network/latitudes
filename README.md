@@ -1,10 +1,10 @@
 # Project LATiTuDeS
-## Library of Aquatic Tracking and Telemetry Data Samples
+***Library of Aquatic Tracking and Telemetry Data Samples***
 
 ## Library structure
 
 ## File metadata schema
-Data files must be associated with a `metadata.yaml` file providing context and attribution for the data file. the current schema is located at `tests/validation-sxhema.yaml`.
+Data files must be associated with a `metadata.yaml` file providing context and attribution for the data file. the current schema is located at `tests/validation-schema.yaml`.
 
 ## Contributing and data needs
 - Raw
