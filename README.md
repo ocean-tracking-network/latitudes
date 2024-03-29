@@ -4,7 +4,7 @@
 ## Library structure
 
 ## File metadata schema
-Data files must be associated with a `metadata.yaml` file providing context and attribution for the data file. the current schema is located at `tests/validation-schema.yaml`.
+Data files must be associated with a `metadata.yaml` file providing context and attribution for the data file. The current schema is found within [`schema-guide.md`](schema-guide.md) and validated against [`tests/validation-schema.yaml`](tests/validation-schema.yaml).
 
 ## Contributing and data needs
 - Raw
