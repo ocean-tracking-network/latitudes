@@ -21,6 +21,7 @@ Beyond that, everything is fluid at this point. If you would like to include new
   - [`file_type`](#file_type)
   - [`format`](#format)
   - [`instrument`](#instrument)
+  - [`license`](#license)
   - [`poc`](#poc)
   - [`recording`](#recording)
   - [`records`](#records)
@@ -128,7 +129,19 @@ Beyond that, everything is fluid at this point. If you would like to include new
         firmware_version: 1.03
         code_map: MAP-112
       ```
-    
+
+### `license`
+
+  - **type**: string
+  - **required**: `true`
+  - **description**: License under which your data can be used, distributed, etc.
+  For help selecting a license, try the [Creative Commons License Chooser](https://chooser-beta.creativecommons.org/).
+  - **usage**:<br><br>
+      ``` yaml
+      license: CC-BY-NC-SA-4.0
+      ```
+
+
 ### `poc`
 
   - **type**: Array of [`definitions.poc`](#definitions.poc)
