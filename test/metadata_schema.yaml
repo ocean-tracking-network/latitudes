@@ -3,7 +3,7 @@ name: str()
 file_type: str()
 poc:
   name: str()
-  contact: regex('^.*@.*\\..*$')
+  email: regex('^.*@.*\\..*$')
 citation.cff: map()
 format: str()
 size_bytes: int()

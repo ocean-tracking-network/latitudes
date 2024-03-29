@@ -2,7 +2,7 @@ name: "VR2 3145 20041115.000"
 file_type: raw detections
 poc:
   name: "Michael O'Brien"
-  contact: "obrien@umces.edu"
+  email: "obrien@umces.edu"
 citation.cff: 
   cff-version: 1.2.0 # https://citation-file-format.github.io/
   authors:
