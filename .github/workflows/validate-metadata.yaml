@@ -42,11 +42,11 @@ jobs:
         use-public-rspm: true
         
     - name: Set up R packages
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          packages:
-            any::yaml
-            any::cffr
+      uses: r-lib/actions/setup-r-dependencies@v2
+      with:
+        packages:
+          any::yaml
+          any::cffr
             
     - name: Validate citation
       shell: Rscript {0}
