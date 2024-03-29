@@ -62,5 +62,6 @@ instrument:
 records:
   transmitter:
     - type: "4K Pinger"
+      vendor: Vemco
       n_detected: 6
       n_detections: 827

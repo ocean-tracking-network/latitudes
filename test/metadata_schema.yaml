@@ -33,5 +33,6 @@ custom_map:
 
 transmitter_record:
   type: str()
+  vendor: str()
   n_detected: int()
   n_detections: int()
