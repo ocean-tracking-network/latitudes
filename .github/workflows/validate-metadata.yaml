@@ -27,7 +27,7 @@ jobs:
       run: |
         yamale -s ./test/metadata_schema.yaml \
         -p ruamel \
-        $(find -iname metadata.yaml | jq -Rsc 'split("\n")[:-1]')
+        $(find -iname metadata.yaml)
     
   cff-validate:
     runs-on: ubuntu-latest
