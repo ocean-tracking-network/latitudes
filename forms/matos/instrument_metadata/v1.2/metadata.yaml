@@ -1,0 +1,72 @@
+name: "ACT_instrument_metatdata_shortform.xlsx"
+file_type: network instrument metadata
+version: 1.2
+license: ## NEED LICENSE
+poc:
+  name: "Kimberly Richie"
+  contact: "east.coast.telemetry@gmail.com"
+size_bytes: 39678
+creation_date: 2024-02-12
+format: Microsoft Excel XLSX
+  sheets:
+    - name: Data Dictionary
+      rows:
+        n_preamble: 4
+        header: 5
+        total: 31
+      columns:
+        total: 3
+        names:
+          - Field Name
+          - 'Units/format example'
+          - Definition
+    - name: Deployment
+      rows:
+        n_preamble: 3
+        header: 4
+        total: 6
+      columns: 
+        total: 27
+        names:
+          - OTN_ARRAY
+          - STATION_NO
+          - 'DEPLOY_DATE_TIME (yyyy-mm-ddThh:mm:ss)'
+          - TIMEZONE
+          - DEPLOY_LAT
+          - DEPLOY_LONG
+          - BOTTOM_DEPTH
+          - RISER_LENGTH
+          - INSTRUMENT_DEPTH
+          - INS_MODEL_NO
+          - INS_SERIAL_NO
+          - CODE_SET
+          - TRANSMITTER
+          - TRANSMIT_MODEL
+          - AR_MODEL_NO
+          - AR_SERIAL_NO
+          - 'DEPLOYED_BY (Lead Technicians)'
+          - 'RECOVERED (y/n/l)'
+          - 'RECOVER_DATE_TIME (yyyy-mm-ddThh:mm:ss)'
+          - TIMEZONE
+          - 'RECOVER_LAT (dd.ddddd)'
+          - 'RECOVER_LONG (ddd.ddddd)'
+          - 'DATA_DOWNLOADED (y/n)'
+          - 'DOWNLOAD_DATE_TIME (yyyy-mm-ddThh:mm:ss)'
+          - TIMEZONE
+          - FILENAME
+          - COMMENTS
+citation.cff: 
+  cff-version: 1.2.0 # https://citation-file-format.github.io/
+  authors:
+  - family-names: "Richie"
+    given-names: "Kimberly"
+  - family-names: #original author?
+    given-names: #original author?
+  title: "ACT_instrument_metatdata_shortform.xlsx"
+  version: 1.2
+  abstract: Adapted from the OTN instrument metadata form created on 2011-12-09.
+    Form standardizes data associates with collection of deployment, recovery,
+    and download metadata associated with data-collecting instruments including
+    acoustic receivers, sentinel tags, ADCPs, benthic pods, CPODs, CTDs, etc.
+  date-released: 2024-02-12
+  message: "Please cite this dataset using these metadata."
