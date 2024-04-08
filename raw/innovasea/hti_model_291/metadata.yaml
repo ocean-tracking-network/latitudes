@@ -1,0 +1,98 @@
+name: "AT17S013261600.RAT"
+license: "CC-BY-4.0"
+file_type: raw detections
+poc:
+  name: "Jeroen Hubert"
+  email: "j.hubert@biology.leidenuniv.nl"
+citation.cff: 
+  cff-version: 1.2.0 # https://citation-file-format.github.io/
+  message: "Please cite this dataset using the metadata provided below."
+  title: "Data: Effects of seismic airgun playbacks on swimming patterns and
+    behavioural states of Atlantic cod in a net pen"
+  abstract: "We tracked individual fish using acoustic telemetry and exposed them
+    to sound. Here, we provide (1) the raw acoustic tag detections, (2) the
+    filtered/processed tag detections which served as an input for YAPS
+    (Yet Another Positioning Solver), (3) the positions of the hydrophones
+    (acoustic tag receivers), and (4) the positions of the fish (output of YAPS)
+    and other relevant covariates (sun elevation, tide and treatment period)."
+  authors:
+  - family-names: "Hubert"
+    given-names: "Jeroen"
+    orcid: "https://orcid.org/0000-0001-9095-3486"
+  - family-names: "Campbell"
+    given-names: "James Adam"
+    orcid: "https://orcid.org/0000-0002-6150-0821"
+  - family-names: "Slabbekoorn"
+    given-names: "Hans"
+  identifiers:
+  - type: doi
+    value: 10.5281/zenodo.4013336
+  date-released: 2020-09-03
+  type: dataset
+  url: "https://zenodo.org/records/4013336"
+  license: "CC-BY-4.0"
+  references:
+    title: "Effects of seismic airgun playbacks on swimming patterns and
+      behavioural states of Atlantic cod in a net pen"
+    authors:
+    - family-names: "Hubert"
+      given-names: "Jeroen"
+      orcid: "https://orcid.org/0000-0001-9095-3486"
+   - family-names: "Campbell"
+      given-names: "James Adam"
+      orcid: "https://orcid.org/0000-0002-6150-0821"
+    - family-names: "Slabbekoorn"
+      given-names: "Hans"
+    doi: "10.1016/j.marpolbul.2020.111680"
+    journal: "Marine Pollution Bulletin"
+    volume: 160
+    month: 11
+    year: 2020
+    issue: 111680
+    license: "CC-BY-4.0"
+format: ".RAT"
+size_bytes: 241738
+recording:
+  start: "2017-11-22T16:00:00Z"
+  end: "2017-11-22T17:00:00Z"
+creation_date: 2017-11-22
+exporting_software:
+  name: UNKNOWN
+  version: 2.00
+instrument:
+  type:
+    - "HTI Model 590"
+    - "HTI Model 291"
+  n_hydrophones: 4
+  frequency_khz: 307
+  vendor: HTI
+  firmware_version: UNKNOWN
+  serial_number: UNKNOWN
+  code_map:
+    custom:
+      - state: RECEIVE
+        gain: 40.00
+        min_volts: 0.100
+        snr_threshold: 2.300
+        snr_filter: 1
+      - state: RECEIVE
+        gain: 38.00
+        min_volts: 0.100
+        snr_threshold: 2.500
+        snr_filter: 1
+      - state: RECEIVE
+        gain: 57.00
+        min_volts: 0.100
+        snr_threshold: 2.500
+        snr_filter: 1
+      - state: RECEIVE
+        gain: 43.00
+        min_volts: 0.100
+        snr_threshold: 2.500
+        snr_filter: 1
+records:
+  transmitter:
+    - type: "Model 795-LF"
+      vendor: HTI
+      n_detected: 1
+      n_detections: 6337
