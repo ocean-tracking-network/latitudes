@@ -44,3 +44,11 @@ Files must be associated with a `metadata.yaml` file providing its context, attr
 - Schema
    - OTN (multiple across Geoserver and exports)
    - GLATOS 
+
+## Licensing
+
+Project LATiTuDeS is licensed under the [CC-BY-4.0 license](licenses/LICENSE-CC-BY-4.0.md).
+
+Files are individually-licensed under the license reported in the `license` field of its corresponding `metadata.yaml` file.
+
+All licenses can be found in the [`licenses/` directory](licenses).
