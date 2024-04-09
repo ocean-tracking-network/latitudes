@@ -1,4 +1,4 @@
-name: "ACT_instrument_metatdata_shortform.xlsx"
+name: "ACT_instrument_metadata_shortform.xlsx"
 file_type: network instrument metadata
 version: 1.2
 license: ## NEED LICENSE
@@ -62,7 +62,7 @@ citation.cff:
     given-names: "Kimberly"
   - family-names: #original author?
     given-names: #original author?
-  title: "ACT_instrument_metatdata_shortform.xlsx"
+  title: "ACT_instrument_metadata_shortform.xlsx"
   version: 1.2
   abstract: Adapted from the OTN instrument metadata form created on 2011-12-09.
     Form standardizes data associates with collection of deployment, recovery,
