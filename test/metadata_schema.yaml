@@ -1,9 +1,10 @@
 # https://github.com/23andMe/Yamale?tab=readme-ov-file#validators
 name: str()
+license: str()
 file_type: str()
 poc:
   name: str()
-  contact: regex('^.*@.*\\..*$')
+  email: regex('^.*@.*\\..*$')
 citation.cff: map()
 format: str()
 size_bytes: int()
@@ -33,5 +34,6 @@ custom_map:
 
 transmitter_record:
   type: str()
+  vendor: str()
   n_detected: int()
   n_detections: int()
