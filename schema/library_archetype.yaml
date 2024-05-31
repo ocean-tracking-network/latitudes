@@ -1,0 +1,13 @@
+# This schema is used to validate items that are consistent across all LATiTUDeS
+#     data types. 
+# https://github.com/23andMe/Yamale?tab=readme-ov-file#validators
+
+name: str()
+file_type: str()
+format: str()
+size_bytes: int()
+license: str()
+poc:
+  name: str()
+  email: regex('^.*@.*\\..*$')
+citation.cff: map()
