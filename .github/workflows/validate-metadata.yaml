@@ -4,7 +4,7 @@ on:
   push:
     paths:
       - '**metadata.ya?ml'
-      - 'schema/'
+      - '**archetype.yaml'
   pull_request:
   workflow_dispatch:
 
