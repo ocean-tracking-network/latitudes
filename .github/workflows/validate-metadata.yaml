@@ -23,11 +23,10 @@ jobs:
         pip install ruamel.yaml \
         pip install ruamel.yaml.cmd
       
-    - name: Run Yamale
+    - name: Run Yamale on ./raw
       run: |
-        yamale -s ./test/metadata_schema.yaml \
-        -p ruamel \
-        $(find -iname metadata.yaml)
+        yamale -s ./schemas/raw_schema.yaml \
+        -p ruamel ./raw
     
   cff-validate:
     runs-on: ubuntu-latest
