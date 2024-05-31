@@ -1,7 +1,7 @@
 # https://github.com/23andMe/Yamale?tab=readme-ov-file#validators
 name: str()
-license: str()
 file_type: str()
+license: str()
 poc:
   name: str()
   email: regex('^.*@.*\\..*$')
@@ -16,21 +16,32 @@ exporting_software:
   name: str()
   version: any(str(), num())
 instrument:
-  type: str()
+  type: subset(str())
   frequency_khz: num()
   vendor: str()
   firmware_version: any(str(), num())
-  code_map:
-    custom: list(include('custom_map'), required=False)
-  serial_number: num()
+  code_map: any(str(), map(include('custom_map'), required=False))
+  serial_number: any(str(), num())
+  n_hydrophones: num(required=False)
 records:
   transmitter: list(include('transmitter_record'))
         
 ---
 custom_map:
+  vr2: list(include('vr2_custom_map'), required=False)
+  hti: list(include('hti_custom_map'), required=False)
+
+vr2_custom_map:
   type: str()
   sync: num()
   bin: num()
+  
+hti_custom_map:
+  state: str()
+  gain: num()
+  min_volts: num()
+  snr_threshold: num()
+  snr_filter: int()
 
 transmitter_record:
   type: str()

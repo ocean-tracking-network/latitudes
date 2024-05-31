@@ -1,4 +1,4 @@
-# Guide to metadata schema version 0.0.0.9000
+# Guide to metadata schema version 0.0.0.9001
 
 This guide is adapted directly from the [CITATION.cff schema guide](https://github.com/citation-file-format/citation-file-format/blob/main/schema-guide.md).
 
@@ -240,40 +240,100 @@ poc:
       ``` yaml
       code_map:
         custom:
+          vr2:
+            - type: "4K Pinger"
+              sync: 380.0
+              bin: 20.0
+      ```
+
+#### definitions.code_map.custom.hti
+
+  - **type**: `object` with the following keys:
+    - [`state`](#definitions.code_map.custom.hti.state)
+    - [`gain`](#definitions.code_map.custom.hti.gain)
+    - [`min_volts`](#definitions.code_map.custom.hti.min_volts)
+    - [`snr_threshold`](#definitions.code_map.custom.hti.snr_threshold)
+    - [`snr_filter`](#definitions.code_map.custom.hti.snr_filter)
+  - **required**: `false`
+  - **description**: Custom mapping of HTI 307 kHz transmitters
+  - **usage**:<br><br>
+      ``` yaml
+      custom:
+        hti:
+          - state: RECEIVE
+            gain: 40.00
+            min_volts: 0.100
+            snr_threshold: 2.300
+            snr_filter: 1
+      ```
+      
+##### definitions.code_map.custom.hti.state
+
+  - **type**: Nonempty string
+  - **required**: `true` for `defintions.code_map.custom.hti`
+  - **description**: 
+  - **usage**: see [`definitions.code_map.custom.hti`](#definitions.code_map.custom.hti)
+
+##### definitions.code_map.custom.hti.gain
+
+  - **type**: float
+  - **required**: `true` for `defintions.code_map.custom.hti`
+  - **description**: 
+  - **usage**: see [`definitions.code_map.custom.hti`](#definitions.code_map.custom.hti)      
+
+##### definitions.code_map.custom.hti.min_volts
+
+  - **type**: float
+  - **required**: `true` for `defintions.code_map.custom.hti`
+  - **description**: 
+  - **usage**: see [`definitions.code_map.custom.hti`](#definitions.code_map.custom.hti)    
+
+##### definitions.code_map.custom.hti.snr_threshold
+
+  - **type**: float
+  - **required**: `true` for `defintions.code_map.custom.hti`
+  - **description**: 
+  - **usage**: see [`definitions.code_map.custom.hti`](#definitions.code_map.custom.hti)   
+  
+##### definitions.code_map.custom.hti.snr_filter
+
+  - **type**: float
+  - **required**: `true` for `defintions.code_map.custom.hti`
+  - **description**: 
+  - **usage**: see [`definitions.code_map.custom.hti`](#definitions.code_map.custom.hti)   
+  
+  
+      
+#### definitions.code_map.custom.vr2
+
+  - **type**: `object` with the following keys:
+    - [`bin`](#definitions.code_map.custom.vr2.bin)
+    - [`sync`](#definitions.code_map.custom.vr2.sync)
+    - [`type`](#definitions.type)
+  - **required**: `false`
+  - **description**: Custom mapping of Innovasea VR2 family receivers
+  - **usage**:<br><br>
+      ``` yaml
+      custom:
+        vr2:
           - type: "4K Pinger"
             sync: 380.0
             bin: 20.0
       ```
 
-#### definitions.code_map.custom
-
-  - **type**: `object` with the following keys:
-    - [`bin`](#definitions.code_map.custom.bin)
-    - [`sync`](#definitions.code_map.custom.sync)
-    - [`type`](#definitions.type)
-  - **required**: `false`
-  - **description**:
-  - **usage**:<br><br>
-      ``` yaml
-      custom:
-        - type: "4K Pinger"
-          sync: 380.0
-          bin: 20.0
-      ```
-
-##### definitions.code_map.custom.bin
+##### definitions.code_map.custom.vr2.bin
 
   - **type**: float
-  - **required**: `true` for `defintions.code_map.custom`
+  - **required**: `true` for `defintions.code_map.custom.vr2`
   - **description**: Programmed bin size of the target transmitter type in mSec
-  - **usage**: see [`definitions.code_map.custom`](#definitions.code_map.custom)
+  - **usage**: see [`definitions.code_map.custom.vr2`](#definitions.code_map.custom.vr2)
 
-##### definitions.code_map.custom.sync
+##### definitions.code_map.custom_vr2.sync
 
   - **type**: float
-  - **required**: `true` for `defintions.code_map.custom`
+  - **required**: `true` for `defintions.code_map.custom_vr2`
   - **description**: Programmed sync value of the target transmitter type in mSec
-  - **usage**: see [`definitions.code_map.custom`](#definitions.code_map.custom)
+  - **usage**: see [`definitions.code_map.custom.vr2`](#definitions.code_map.custom.vr2)
 
 
 
@@ -525,7 +585,7 @@ poc:
 
   - **type**: string
   - **required**:
-    - `true` for [`definitions.instrument`](#definitions.instrument) and [`definitions.code_map.custom`](#definitions.code_map_custom)
+    - `true` for [`definitions.instrument`](#definitions.instrument) and [`definitions.code_map.custom`](#definitions.code_map_custom_vr2)
   - **description**: Type or style of the recording instrument or transmitter.
   The more specific, the better.
   - **usage**:<br><br>

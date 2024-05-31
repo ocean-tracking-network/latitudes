@@ -23,7 +23,7 @@ latitudes/
 ```
 
 ## File metadata schema
-Files must be associated with a `metadata.yaml` file providing its context, attribution, and licensing. The current schema is found within [`schema-guide.md`](schema-guide.md) and validated against [`test/validation-schema.yaml`](test/validation-schema.yaml).
+Files must be associated with a `metadata.yaml` file providing its context, attribution, and licensing. The current schema is found within [`schema-guide.md`](schema-guide.md) and validated against those schema in the `schema/` directory.
 
 ## Contributing and data needs
 - Raw

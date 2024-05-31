@@ -23,11 +23,10 @@ jobs:
         pip install ruamel.yaml \
         pip install ruamel.yaml.cmd
       
-    - name: Run Yamale
+    - name: Run Yamale on ./raw
       run: |
-        yamale -s ./test/metadata_schema.yaml \
-        -p ruamel \
-        $(find -iname metadata.yaml)
+        yamale -s ./schema/raw_schema.yaml \
+        -p ruamel ./raw
     
   cff-validate:
     runs-on: ubuntu-latest
@@ -72,6 +71,10 @@ jobs:
         
         cff_files <- list.files(file.path(tempdir(), 'cff'), full.names = T)
         
+        validation_result <- vector("logical", length(cff_files))
+        
         for(i in seq_along(cff_files)) {
-          cffr::cff_validate(cff_files[i])
+          validation_result[i] <- cffr::cff_validate(cff_files[i])
         }
+        
+        if(!all(validation_result)) stop('Invalid cff detected.')
