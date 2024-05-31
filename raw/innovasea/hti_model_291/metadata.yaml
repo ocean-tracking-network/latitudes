@@ -38,7 +38,7 @@ citation.cff:
     - family-names: "Hubert"
       given-names: "Jeroen"
       orcid: "https://orcid.org/0000-0001-9095-3486"
-   - family-names: "Campbell"
+    - family-names: "Campbell"
       given-names: "James Adam"
       orcid: "https://orcid.org/0000-0002-6150-0821"
     - family-names: "Slabbekoorn"
