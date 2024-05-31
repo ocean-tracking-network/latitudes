@@ -70,7 +70,7 @@ instrument:
   firmware_version: UNKNOWN
   serial_number: UNKNOWN
   code_map:
-    custom:
+    custom_hti:
       - state: RECEIVE
         gain: 40.00
         min_volts: 0.100

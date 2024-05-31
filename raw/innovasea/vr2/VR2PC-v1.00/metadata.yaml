@@ -1,8 +1,9 @@
 name: "VR2 3145 20041115.000"
 file_type: raw detections
+license: "CC-BY-4.0"
 poc:
   name: "Michael O'Brien"
-  contact: "obrien@umces.edu"
+  email: "obrien@umces.edu"
 citation.cff: 
   cff-version: 1.2.0 # https://citation-file-format.github.io/
   authors:
@@ -45,7 +46,7 @@ instrument:
   vendor: Vemco
   firmware_version: 1.03
   code_map:
-    custom:
+    custom_vr:
       - type: "256 Pinger"
         sync: 401.2
         bin: 22.3
@@ -62,5 +63,6 @@ instrument:
 records:
   transmitter:
     - type: "4K Pinger"
+      vendor: Innovasea
       n_detected: 6
       n_detections: 827
