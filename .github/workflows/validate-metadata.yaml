@@ -8,22 +8,8 @@ on:
   workflow_dispatch:
 
 jobs:
-  list-metadata-files:
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.file-matrix.outputs.matrix }}
-    steps:
-      - uses: actions/checkout@v4
-      - id: file-matrix
-        run: |
-          echo "matrix=$(find -iname metadata.yaml | jq -Rsc 'split("\n")[:-1]')" >> $GITHUB_OUTPUT
-      
   yamale-validate:
-    needs: list-metadata-files
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        metadata-file: ${{ fromJSON(needs.list-metadata-files.outputs.matrix) }}
     
     steps:
     - name: Check out repository
@@ -39,15 +25,53 @@ jobs:
       
     - name: Run Yamale
       run: |
-        yamale -s ./test/metadata_schema.yaml -p ruamel ${{ matrix.metadata-file }}
+        yamale -s ./test/metadata_schema.yaml \
+        -p ruamel \
+        $(find -iname metadata.yaml)
     
-  # cff-validate:
-  #   needs: list-metadata-files
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       metadata-file: ${{ fromJSON(needs.list-metadata-files.outputs.matrix) }}
-  #   
-  #   steps:
-  #   - name: Validate citation
-  #     uses: dieghernan/cff-validator@v3
+  cff-validate:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+      
+    - name: Set up R
+      uses: r-lib/actions/setup-r@v2
+      with:
+        use-public-rspm: true
+        
+    - name: Set up R packages
+      uses: r-lib/actions/setup-r-dependencies@v2
+      with:
+        packages:
+          any::yaml
+          any::cffr
+            
+    - name: Validate citation
+      shell: Rscript {0}
+      run: |
+        dir.create(file.path(tempdir(), 'cff'))
+        
+        files <- list.files(pattern = '^metadata\\.yaml$', recursive = TRUE, full.names = TRUE)
+        
+        for(i in seq_along(files)){
+          parsed_yaml <- yaml::read_yaml(files[i], readLines.warn = FALSE)
+          
+          parsed_yaml$citation.cff |> 
+            yaml::write_yaml(
+              file.path(
+                tempdir(),
+                'cff',
+                paste0(
+                  gsub('[\\. ]', '_', parsed_yaml$name),
+                  '.cff')
+              )
+            )
+        }
+        
+        cff_files <- list.files(file.path(tempdir(), 'cff'), full.names = T)
+        
+        for(i in seq_along(cff_files)) {
+          cffr::cff_validate(cff_files[i])
+        }
