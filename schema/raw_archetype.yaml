@@ -1,13 +1,4 @@
 # https://github.com/23andMe/Yamale?tab=readme-ov-file#validators
-name: str()
-file_type: str()
-license: str()
-poc:
-  name: str()
-  email: regex('^.*@.*\\..*$')
-citation.cff: map()
-format: str()
-size_bytes: int()
 recording:
   start: str()
   end: str()
