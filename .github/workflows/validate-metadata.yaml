@@ -11,6 +11,10 @@ jobs:
   yamale-validate:
     runs-on: ubuntu-latest
     
+    strategy:
+      matrix:
+        validation-level: [library, raw, forms]
+    
     steps:
     - name: Check out repository
       uses: actions/checkout@v4
@@ -22,11 +26,18 @@ jobs:
       run: |
         pip install ruamel.yaml \
         pip install ruamel.yaml.cmd
-      
-    - name: Run Yamale on ./raw
+        
+    - name: Validiate LATiTuDeS metadata archetypes
+      if: ${{ matrix.validation-level }} == 'library'
       run: |
-        yamale -s ./schema/raw_schema.yaml \
-        -p ruamel ./raw
+        yamale -s ./schema/$library_archetype.yaml --no-strict \
+        -p ruamel ./library
+      
+    - name: Validiate ${{ matrix.validation-level }} metadata archetypes
+      if: ${{ matrix.validation-level }} != 'library'
+      run: |
+        cat ./schema/library_archetype.yaml ./schema/${{ matrix.validation-level }}_archetype.yaml >> ${{ matrix.validation-level }}.yaml
+        yamale -s ${{ matrix.validation-level }}.yaml -p ruamel ./library/${{ matrix.validation-level }}
     
   cff-validate:
     runs-on: ubuntu-latest
