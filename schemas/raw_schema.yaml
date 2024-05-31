@@ -20,21 +20,23 @@ instrument:
   frequency_khz: num()
   vendor: str()
   firmware_version: any(str(), num())
-  code_map:
-    custom_vr: list(include('custom_vr'), required=False)
-    custom_hti: list(include('custom_hti'), required=False)
+  code_map: any(str(), map(include('custom_map'), required=False))
   serial_number: any(str(), num())
   n_hydrophones: num(required=False)
 records:
   transmitter: list(include('transmitter_record'))
         
 ---
-custom_vr:
+custom_map:
+  vr2: list(include('vr2_custom_map'), required=False)
+  hti: list(include('hti_custom_map'), required=False)
+
+vr2_custom_map:
   type: str()
   sync: num()
   bin: num()
   
-custom_hti:
+hti_custom_map:
   state: str()
   gain: num()
   min_volts: num()

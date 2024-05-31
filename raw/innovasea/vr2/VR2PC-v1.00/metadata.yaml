@@ -46,19 +46,20 @@ instrument:
   vendor: Vemco
   firmware_version: 1.03
   code_map:
-    custom_vr:
-      - type: "256 Pinger"
-        sync: 401.2
-        bin: 22.3
-      - type: "4K Pinger"
-        sync: 380.0
-        bin: 20.0
-      - type: "256 Sensor"
-        sync: 360.0
-        bin: 20.0
-      - type: "256 Pinger"
-        sync: 340
-        bin: 20.0
+    custom:
+      vr2:
+        - type: "256 Pinger"
+          sync: 401.2
+          bin: 22.3
+        - type: "4K Pinger"
+          sync: 380.0
+          bin: 20.0
+        - type: "256 Sensor"
+          sync: 360.0
+          bin: 20.0
+        - type: "256 Pinger"
+          sync: 340
+          bin: 20.0
   serial_number: 3145
 records:
   transmitter:

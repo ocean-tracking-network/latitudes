@@ -70,27 +70,28 @@ instrument:
   firmware_version: UNKNOWN
   serial_number: UNKNOWN
   code_map:
-    custom_hti:
-      - state: RECEIVE
-        gain: 40.00
-        min_volts: 0.100
-        snr_threshold: 2.300
-        snr_filter: 1
-      - state: RECEIVE
-        gain: 38.00
-        min_volts: 0.100
-        snr_threshold: 2.500
-        snr_filter: 1
-      - state: RECEIVE
-        gain: 57.00
-        min_volts: 0.100
-        snr_threshold: 2.500
-        snr_filter: 1
-      - state: RECEIVE
-        gain: 43.00
-        min_volts: 0.100
-        snr_threshold: 2.500
-        snr_filter: 1
+    custom:
+      hti:
+        - state: RECEIVE
+          gain: 40.00
+          min_volts: 0.100
+          snr_threshold: 2.300
+          snr_filter: 1
+        - state: RECEIVE
+          gain: 38.00
+          min_volts: 0.100
+          snr_threshold: 2.500
+          snr_filter: 1
+        - state: RECEIVE
+          gain: 57.00
+          min_volts: 0.100
+          snr_threshold: 2.500
+          snr_filter: 1
+        - state: RECEIVE
+          gain: 43.00
+          min_volts: 0.100
+          snr_threshold: 2.500
+          snr_filter: 1
 records:
   transmitter:
     - type: "Model 795-LF"
