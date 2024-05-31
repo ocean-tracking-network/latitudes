@@ -25,7 +25,7 @@ jobs:
       
     - name: Run Yamale on ./raw
       run: |
-        yamale -s ./schemas/raw_schema.yaml \
+        yamale -s ./schema/raw_schema.yaml \
         -p ruamel ./raw
     
   cff-validate:
