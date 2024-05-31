@@ -28,13 +28,13 @@ jobs:
         pip install ruamel.yaml.cmd
         
     - name: Validiate LATiTuDeS metadata archetypes
-      if: ${{ matrix.validation-level }} == 'library'
+      if: ${{ matrix.validation-level == 'library' }} 
       run: |
-        yamale -s ./schema/$library_archetype.yaml --no-strict \
+        yamale -s ./schema/library_archetype.yaml --no-strict \
         -p ruamel ./library
       
     - name: Validiate ${{ matrix.validation-level }} metadata archetypes
-      if: ${{ matrix.validation-level }} != 'library'
+      if: ${{ matrix.validation-level != 'library' }}
       run: |
         cat ./schema/library_archetype.yaml ./schema/${{ matrix.validation-level }}_archetype.yaml >> ${{ matrix.validation-level }}.yaml
         yamale -s ${{ matrix.validation-level }}.yaml -p ruamel ./library/${{ matrix.validation-level }}
