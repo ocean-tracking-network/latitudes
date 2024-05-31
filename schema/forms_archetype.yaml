@@ -1,4 +1,5 @@
 creation_date: day(min='1990-01-01')
+version: any(str(), num())
 exporting_software:
   name: str()
   version: any(str(), num())
