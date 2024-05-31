@@ -32,24 +32,25 @@ citation.cff:
   url: "https://zenodo.org/records/4013336"
   license: "CC-BY-4.0"
   references:
-    - title: "Effects of seismic airgun playbacks on swimming patterns and
+  - type: article
+    title: "Effects of seismic airgun playbacks on swimming patterns and
         behavioural states of Atlantic cod in a net pen"
-      authors:
-      - family-names: "Hubert"
-        given-names: "Jeroen"
-        orcid: "https://orcid.org/0000-0001-9095-3486"
-      - family-names: "Campbell"
-        given-names: "James Adam"
-        orcid: "https://orcid.org/0000-0002-6150-0821"
-      - family-names: "Slabbekoorn"
-        given-names: "Hans"
-      doi: "10.1016/j.marpolbul.2020.111680"
-      journal: "Marine Pollution Bulletin"
-      volume: 160
-      month: 11
-      year: 2020
-      issue: 111680
-      license: "CC-BY-4.0"
+    authors:
+    - family-names: "Hubert"
+      given-names: "Jeroen"
+      orcid: "https://orcid.org/0000-0001-9095-3486"
+    - family-names: "Campbell"
+      given-names: "James Adam"
+      orcid: "https://orcid.org/0000-0002-6150-0821"
+    - family-names: "Slabbekoorn"
+      given-names: "Hans"
+    doi: "10.1016/j.marpolbul.2020.111680"
+    journal: "Marine Pollution Bulletin"
+    volume: 160
+    month: 11
+    year: 2020
+    issue: 111680
+    license: "CC-BY-4.0"
 format: ".RAT"
 size_bytes: 241738
 recording:
