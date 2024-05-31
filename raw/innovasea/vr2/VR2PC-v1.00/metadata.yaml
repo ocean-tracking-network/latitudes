@@ -1,8 +1,9 @@
 name: "VR2 3145 20041115.000"
 file_type: raw detections
+license: "CC-BY-4.0"
 poc:
   name: "Michael O'Brien"
-  contact: "obrien@umces.edu"
+  email: "obrien@umces.edu"
 citation.cff: 
   cff-version: 1.2.0 # https://citation-file-format.github.io/
   authors:
@@ -46,21 +47,23 @@ instrument:
   firmware_version: 1.03
   code_map:
     custom:
-      - type: "256 Pinger"
-        sync: 401.2
-        bin: 22.3
-      - type: "4K Pinger"
-        sync: 380.0
-        bin: 20.0
-      - type: "256 Sensor"
-        sync: 360.0
-        bin: 20.0
-      - type: "256 Pinger"
-        sync: 340
-        bin: 20.0
+      vr2:
+        - type: "256 Pinger"
+          sync: 401.2
+          bin: 22.3
+        - type: "4K Pinger"
+          sync: 380.0
+          bin: 20.0
+        - type: "256 Sensor"
+          sync: 360.0
+          bin: 20.0
+        - type: "256 Pinger"
+          sync: 340
+          bin: 20.0
   serial_number: 3145
 records:
   transmitter:
     - type: "4K Pinger"
+      vendor: Vemco
       n_detected: 6
       n_detections: 827
