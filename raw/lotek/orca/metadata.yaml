@@ -1,0 +1,38 @@
+name: "O42-A-0007556_250627_161148_AllRec.csv"
+file_type: raw detections
+license: "CC-BY-4.0"
+poc:
+  name: "Hugo Flavio"
+  email: "hflavio@dal.ca"
+citation.cff: 
+  cff-version: 1.2.0 # https://citation-file-format.github.io/
+  authors:
+  - family-names: "Flavio"
+    given-names: "Hugo"
+    orcid: "0000-0002-5174-1197"
+  title: "O42-A-0007556_250627_161148_AllRec.csv"
+  message: "Data from a pool test of an ORCA multi-frequency receiver with multiple Open Protocol 69kHz tags from Thelma Biotel as well as a single JSATS tag from ATS active"
+format: ASCII text
+size_bytes: 
+recording:
+  start: "2025-06-27"
+  end: "2025-06-27"
+creation_date: 2025-06-27
+exporting_software:
+  name: VR2PC
+  version: 1.00
+instrument:
+  type: "Lotek ORCA"
+  frequency_khz: 69
+  vendor: Lotek
+  firmware_version: 
+  code_map: 
+    custom:
+      orca: tbd
+  serial_number: tbd
+records:
+  transmitter:
+    - type: "tbd"
+      vendor: Thelma Biotel
+      n_detected: tbd
+      n_detections: tbd
