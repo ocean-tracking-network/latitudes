@@ -1,0 +1,22 @@
+creation_date: day(min='1990-01-01')
+version: any(str(), num())
+exporting_software:
+  name: str()
+  version: any(str(), num())
+file_overview: include('file_overviews')
+
+---
+
+file_overviews:
+  description: str(required=False)
+  excel: list(include('excel_sheets'), required=False)
+  
+excel_sheets:
+  sheet_name: str()
+  rows: 
+    n_preamble: int()
+    header: int()
+    total: int()
+  columns:
+    total: int()
+    names: list(str())
